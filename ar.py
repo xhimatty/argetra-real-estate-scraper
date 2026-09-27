@@ -7,7 +7,7 @@ from lxml import html
 def get_urls():
     session = requests.Session()
     listing_urls = []
-    for x in range(1, 8):
+    for x in range(1, 2):
         url = f"https://www.argetra.com/city/naumburg/s{x}"
         session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"})
 
@@ -123,5 +123,7 @@ def get_property_data(url_data):
         )
     return property_data
 
-results = get_property_data(url_data)
-print(results)
+
+if __name__ == '__main__':
+    results = get_property_data(url_data)
+    print(results)
